@@ -377,4 +377,228 @@ JAMSystem uses Google Sheets as its database. Follow these steps to connect your
 4. Set source to **Deploy from a branch**, select the **`gh-pages`** branch, and click **Save**.
 5. Your site will be live at `https://[your-username].github.io/JAMSystem/`
 
+---
 
+---
+
+# 🇹🇭 คู่มือภาษาไทย — JAMSystem
+
+ระบบจัดการใบสมัครงาน (Job Application Management System) สมัยใหม่ ใช้งานง่าย รองรับทุกหน้าจอ สร้างด้วย React และใช้ Google Sheets เป็นฐานข้อมูลผ่าน Google Apps Script — ฟรีและ Real-time
+
+> **ทดลองใช้งาน:** [https://thenateraider.github.io/JAMSystem/](https://thenateraider.github.io/JAMSystem/)
+
+---
+
+## 📸 ภาพหน้าจอ
+
+### ภาพรวมหน้าหลัก (Dashboard)
+<img width="1724" height="1119" alt="Screenshot 2026-05-16 at 15 50 36" src="https://github.com/user-attachments/assets/d5e552b0-e1da-4079-8ab9-976ea39e300b" />
+
+### หน้าต่างเพิ่มผู้สมัครใหม่
+<img width="1165" height="769" alt="Screenshot 2026-05-16 at 15 53 44" src="https://github.com/user-attachments/assets/1237ab7f-6d41-4431-a075-2482042cf02b" />
+
+### หน้าต่างแก้ไขผู้สมัคร (พร้อมปุ่ม Delete)
+<img width="1056" height="738" alt="Screenshot 2026-05-16 at 15 54 10" src="https://github.com/user-attachments/assets/109d387b-b57e-486c-b0f8-82fed122b9c9" />
+
+### หน้าต่างยืนยันการกระทำ (พร้อม Loading Spinner)
+<img width="489" height="251" alt="Screenshot 2026-05-16 at 15 54 38" src="https://github.com/user-attachments/assets/9a6a8758-61ca-4fbe-bc2a-3c952bfd6355" />
+
+### Toast แจ้งเตือนผลลัพธ์
+<img width="1662" height="891" alt="Screenshot 2026-05-16 at 15 55 13" src="https://github.com/user-attachments/assets/658613c4-ec5d-4644-b56f-ccd40c7bc110" />
+
+---
+
+## 🌟 ฟีเจอร์ทั้งหมด
+
+### 1. การ์ดสรุปสถิติ (Dashboard Statistics)
+ด้านบนของหน้าจอแสดง **การ์ดสถิติ 5 ใบ** ที่อัปเดตตัวเลขแบบ Real-time ทุกครั้งที่มีการเพิ่ม แก้ไข หรือลบข้อมูล
+
+| การ์ด | คำอธิบาย |
+|-------|----------|
+| **Total** | จำนวนผู้สมัครทั้งหมดในระบบ |
+| **Applied** | ผู้สมัครที่ส่งใบสมัครเข้ามาใหม่ |
+| **Interview** | ผู้สมัครที่ได้รับการนัดสัมภาษณ์ |
+| **Passed** | ผู้สมัครที่ผ่านการสัมภาษณ์และได้รับการอนุมัติ |
+| **Rejected** | ผู้สมัครที่ถูกปฏิเสธ |
+
+---
+
+### 2. ตารางแสดงข้อมูลผู้สมัคร (Applicant Table)
+
+| คอลัมน์ | คำอธิบาย |
+|---------|----------|
+| **ID** | รหัสเฉพาะที่สร้างอัตโนมัติ เช่น `A0001` |
+| **Name** | ชื่อ-นามสกุล พร้อมคำนำหน้า |
+| **Email** | อีเมลของผู้สมัคร |
+| **Phone** | เบอร์โทรศัพท์ (รักษาเลข 0 นำหน้า) |
+| **Position** | ตำแหน่งที่สมัคร |
+| **Status** | Badge แสดงสถานะ พร้อมสีที่แตกต่างกัน |
+| **Updated At** | วันเวลาที่แก้ไขล่าสุด |
+| **Created At** | วันเวลาที่สร้างข้อมูล |
+| **Actions** | ปุ่มแก้ไข (✎) และลบ (✕) |
+
+<img width="1496" height="851" alt="Screenshot 2026-05-16 at 15 56 22" src="https://github.com/user-attachments/assets/ad049fb8-b055-4aaf-ac44-e8494263537a" />
+
+---
+
+### 3. การเรียงลำดับคอลัมน์ (Ascending / Descending)
+
+ทุกหัวคอลัมน์ **กดได้** เพื่อเรียงข้อมูล
+
+- **กดครั้งแรก** → เรียงน้อย→มาก (A→Z) แสดง **↑**
+- **กดครั้งที่สอง** → เรียงมาก→น้อย (Z→A) แสดง **↓**
+- **กดคอลัมน์อื่น** → รีเซ็ตเป็น Ascending ของคอลัมน์ใหม่
+
+> ค่าเริ่มต้นเรียงตาม **ID แบบ Descending** (ผู้สมัครล่าสุดอยู่บนสุด)
+
+<img width="800" height="415" alt="ezgif-58a6fa63f9164071" src="https://github.com/user-attachments/assets/c4235f67-05bc-46a5-81e0-dd81201a9130" />
+
+---
+
+### 4.1 การค้นหา (Search)
+
+ช่องค้นหากรองข้อมูล **Real-time** ขณะพิมพ์ ค้นหาได้จาก: **ชื่อ / ตำแหน่ง / อีเมล / รหัส ID** และ **ไม่แยกพิมพ์ใหญ่-เล็ก**
+
+### 4.2 การกรองตามสถานะ (Status Filter)
+
+Dropdown กรองสถานะ ใช้ร่วมกับช่องค้นหาได้พร้อมกัน
+
+<img width="800" height="415" alt="searchbar" src="https://github.com/user-attachments/assets/377ab1d6-fb24-45f4-b09f-afe86c9a3bac" />
+
+---
+
+### 5. การแบ่งหน้า (Pagination)
+
+- แสดง **10 รายการต่อหน้า**
+- ปุ่ม **Previous / Next** สำหรับเปลี่ยนหน้า
+- รีเซ็ตหน้า 1 อัตโนมัติเมื่อค้นหาหรือกรองใหม่
+
+<img width="619" height="380" alt="Screenshot 2026-05-16 at 16 02 35" src="https://github.com/user-attachments/assets/f704cd55-de6c-4cba-842c-e60bbd6f4e0d" />
+
+---
+
+### 6. เพิ่มผู้สมัครใหม่ (Add New Applicant)
+
+กดปุ่ม **"+ Add New Applicant"** เพื่อเปิดฟอร์ม
+
+| ฟิลด์ | เงื่อนไข |
+|-------|---------|
+| **คำนำหน้า (Title)** | จำเป็น |
+| **ชื่อ (Name)** | จำเป็น, อย่างน้อย 2 ตัวอักษร |
+| **อีเมล (Email)** | จำเป็น, รูปแบบ `ชื่อ@domain.tld` |
+| **เบอร์โทร (Phone)** | จำเป็น, ขึ้นต้นด้วย `0` และมี 10 หลัก |
+| **ตำแหน่ง (Position)** | จำเป็น |
+| **สถานะ (Status)** | กำหนดเป็น "Applied" อัตโนมัติ |
+| **หมายเหตุ (Note)** | ไม่บังคับ |
+
+<img width="721" height="702" alt="Screenshot 2026-05-16 at 16 02 56" src="https://github.com/user-attachments/assets/7b5c571c-0aad-4de8-bce2-887dcf88f596" />
+
+---
+
+### 7. แก้ไขผู้สมัคร (Edit Applicant)
+
+กดไอคอน **✎** ในตาราง เพื่อแก้ไขข้อมูล โดยจะโหลดข้อมูลเดิมมาให้อัตโนมัติ
+- มี **ปุ่ม Delete (สีแดง)** อยู่ระหว่าง Cancel และ Save
+- **Dropdown สถานะ** จะแสดงเฉพาะขั้นตอนถัดไปที่อนุญาตเท่านั้น
+
+<img width="659" height="691" alt="Screenshot 2026-05-16 at 16 03 14" src="https://github.com/user-attachments/assets/9b8e9081-2d07-4d71-bde1-33bfe24fac64" />
+
+---
+
+### 8. ระบบตรวจสอบความถูกต้อง (Validation)
+
+ตรวจสอบ Real-time ขณะพิมพ์ ข้อผิดพลาดจะแสดงใต้ฟิลด์ทันที
+
+- **✅ อีเมล** — ต้องถูกรูปแบบ และไม่ซ้ำในระบบ
+- **✅ เบอร์โทร** — ต้องขึ้นต้นด้วย `0` และมี 10 หลักพอดี และไม่ซ้ำ
+- **✅ ชื่อ+คำนำหน้า** — ตรวจจับซ้ำ (ไม่แยกพิมพ์ใหญ่-เล็ก)
+- **✅ Shake Animation** — ฟิลด์ที่ผิดพลาดจะสั่นไหวเมื่อกด Submit
+
+<img width="800" height="454" alt="shakeerror" src="https://github.com/user-attachments/assets/6c6a51bc-dd3c-4fcd-a543-f2bde2aa7967" />
+
+---
+
+### 9. ระบบควบคุมสถานะ (Status Flow Guard)
+
+| สถานะปัจจุบัน | สถานะที่เปลี่ยนได้ |
+|--------------|-----------------|
+| **Applied** | Applied, Interview, Rejected |
+| **Interview** | Interview, Passed, Rejected |
+| **Passed** | Passed เท่านั้น (ล็อค) |
+| **Rejected** | Rejected เท่านั้น (ลบได้อย่างเดียว) |
+
+<img width="816" height="750" alt="Screenshot 2026-05-16 at 16 05 31" src="https://github.com/user-attachments/assets/9e9bc246-3b59-4afd-b6bf-c2419b6e4caf" />
+
+---
+
+### 10. หน้าต่างยืนยัน (Confirm Dialogs)
+
+ทุกการกระทำที่มีผลถาวรต้องผ่านการยืนยัน 2 ขั้นตอน (3 ประเภท: Save / Delete / Discard)
+
+เมื่อกดยืนยัน ปุ่มจะเปลี่ยนเป็น **Loading Spinner** และล็อคปุ่มทั้งหมด ป้องกันการกดซ้ำ
+
+<img width="530" height="295" alt="Screenshot 2026-05-16 at 16 06 04" src="https://github.com/user-attachments/assets/cf95148d-1207-4442-a79f-77e15aa6122d" />
+
+---
+
+### 11. Toast แจ้งเตือน (Toast Notifications)
+
+หลังทุกการกระทำ Toast จะสไลด์เข้าจากมุมล่างขวา หายเองหลัง 5 วินาที
+
+| การกระทำ | สี Toast |
+|----------|---------|
+| เพิ่ม/แก้ไข/ลบ สำเร็จ | 🟢 เขียว |
+| เกิดข้อผิดพลาด | 🔴 แดง |
+
+<img width="1662" height="891" alt="Screenshot 2026-05-16 at 15 55 13" src="https://github.com/user-attachments/assets/658613c4-ec5d-4644-b56f-ccd40c7bc110" />
+
+---
+
+### 12–14. ฟีเจอร์ Backend (GAS)
+
+- **Backend Validation** — ตรวจสอบอีเมล/เบอร์/ชื่อซ้ำอีกครั้งฝั่ง Server ก่อนบันทึกทุกครั้ง
+- **Auto ID** — สร้างรหัส `A0001`, `A0002`... อัตโนมัติฝั่ง Server
+- **Phone Formatting** — เพิ่ม `'` นำหน้าเบอร์ รักษาเลข 0 นำหน้าใน Google Sheets
+
+---
+
+## 🛠 Tech Stack
+
+| ชั้น | เทคโนโลยี |
+|------|----------|
+| **UI** | React 19 (Vite) |
+| **Styling** | Vanilla CSS — Glassmorphism, Micro-animations |
+| **State** | React Hooks |
+| **Backend** | Google Sheets + Google Apps Script |
+| **Deploy** | GitHub Pages |
+
+---
+
+## 🚀 วิธีรันโปรเจกต์
+
+```bash
+git clone https://github.com/thenateraider/JAMSystem.git
+cd JAMSystem
+npm install
+npm run dev
+```
+เปิด Browser ที่ `http://localhost:5173`
+
+---
+
+## ⚙️ ตั้งค่า Backend
+
+1. สร้าง Google Sheet ตั้งชื่อ Tab ว่า **`Applicants`** และสร้างหัวคอลัมน์: `id | title | name | email | phone | position | status | note | created_at | updated_at`
+2. ไปที่ **Extensions → Apps Script** วางโค้ดจาก [`gas/Code.gs`](gas/Code.gs)
+3. **Deploy → Web app** (Execute as: Me / Access: Anyone) แล้วก๊อปปี้ URL
+4. วาง URL ใน `src/services/applicantApi.js`:
+   ```javascript
+   export const API_URL = 'วาง URL ที่นี่'
+   ```
+
+## 🌍 Deploy ขึ้น GitHub Pages
+
+```bash
+npm run deploy
+```
+จากนั้น GitHub → Settings → Pages → Branch: `gh-pages` → Save
