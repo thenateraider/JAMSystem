@@ -169,6 +169,11 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
+  /* Total card spans full width on mobile */
+  .stat-grid .stat-card:first-child {
+    grid-column: 1 / -1;
+  }
+
   .stat-card {
     min-width: 0;
     overflow: hidden;
