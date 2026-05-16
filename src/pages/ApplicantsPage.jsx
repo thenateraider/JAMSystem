@@ -93,7 +93,15 @@ function ApplicantsPage() {
     setConfirmConfig({
       isOpen: true,
       title: 'Delete Applicant',
-      message: `Are you sure you want to delete ${applicant.name}? This action cannot be undone.`,
+      message: (
+        <>
+          Are you sure you want to delete <strong>{applicant.name}</strong>?
+          <br />
+          <span style={{ color: '#e11d48', fontWeight: 'bold', marginTop: '8px', display: 'inline-block' }}>
+            This action cannot be undone.
+          </span>
+        </>
+      ),
       intent: 'danger',
       onConfirm: async () => {
         try {

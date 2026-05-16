@@ -17,13 +17,14 @@
 
 html {
   background-color: #d5e0ee;
+  overflow-x: hidden;
   /* Fix white background during scroll bounce */
 }
 
 body {
   margin: 0;
   background-color: #d5e0ee;
-
+  overflow-x: hidden;
   background-attachment: fixed;
   min-height: 100vh;
 }
