@@ -1,0 +1,22 @@
+.pagination {
+  align-items: center;
+  color: #64748b;
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
+.pagination button {
+  background: #ffffff;
+  border: 1px solid #dbe2ea;
+  border-radius: 8px;
+  color: #334155;
+  min-height: 38px;
+  padding: 0 12px;
+}
+
+@media (max-width: 620px) {
+  .pagination {
+    justify-content: space-between;
+  }
+}

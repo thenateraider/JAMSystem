@@ -1,0 +1,164 @@
+.applicants-page {
+  display: grid;
+  gap: 24px;
+  margin: 0 auto;
+  max-width: 1380px;
+  padding: 40px 24px 64px;
+}
+
+.page-header {
+  align-items: end;
+  display: flex;
+  gap: 24px;
+  justify-content: space-between;
+}
+
+.eyebrow {
+  color: #1b6753;
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  margin: 0 0 8px;
+  text-transform: uppercase;
+}
+
+.page-header h1 {
+  color: #00486a;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  line-height: 1.1;
+  margin: 0;
+}
+
+.page-description {
+  color: #5f94a7;
+  font-size: 1.05rem;
+  margin: 14px 0 0;
+  max-width: 620px;
+}
+
+.add-applicant-btn {
+  background: #005982;
+  ;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 14px 28px;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.add-applicant-btn:hover {
+  background: #0089b7;
+  color: #ffffff;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  transform: translateY(-1px);
+}
+
+.stat-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.stat-card {
+  align-items: center;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: space-between;
+  padding: 24px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.stat-card:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.stat-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.stat-title {
+  color: #64748b;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.stat-value {
+  color: #0f172a;
+  font-size: 2.25rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.stat-icon {
+  align-items: center;
+  border-radius: 50%;
+  display: flex;
+  height: 64px;
+  justify-content: center;
+  width: 64px;
+}
+
+.stat-icon--total {
+  background: rgba(77, 161, 169, 0.15);
+  color: #4DA1A9;
+}
+
+.stat-icon--applied {
+  background: rgba(37, 99, 235, 0.15);
+  color: #2563eb;
+}
+
+.stat-icon--interview {
+  background: rgba(245, 158, 11, 0.15);
+  color: #f59e0b;
+}
+
+.stat-icon--passed {
+  background: rgba(21, 128, 61, 0.15);
+  color: #15803d;
+}
+
+.stat-icon--rejected {
+  background: rgba(220, 38, 38, 0.15);
+  color: #dc2626;
+}
+
+.error-banner {
+  background: rgba(254, 242, 242, 0.9);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(254, 202, 202, 0.8);
+  border-radius: 12px;
+  color: #991b1b;
+  padding: 16px 20px;
+}
+
+@media (max-width: 760px) {
+  .applicants-page {
+    padding: 24px 16px 40px;
+  }
+
+  .page-header {
+    align-items: start;
+    flex-direction: column;
+  }
+
+  .add-applicant-btn {
+    width: 100%;
+  }
+
+  .stat-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

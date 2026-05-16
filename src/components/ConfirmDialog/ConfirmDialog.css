@@ -1,0 +1,121 @@
+.modal-overlay {
+  align-items: center;
+  background: rgba(46, 80, 119, 0.6);
+  /* Dark blue overlay */
+  backdrop-filter: blur(4px);
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  left: 0;
+  padding: 16px;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 50;
+}
+
+.modal-dialog {
+  background: #F6F4F0;
+  border-radius: 16px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+  max-width: 420px;
+  padding: 24px;
+  width: 100%;
+}
+
+.modal-dialog h3 {
+  color: #2E5077;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0 0 12px;
+}
+
+.modal-dialog p,
+.modal-message {
+  color: #000000;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0 0 24px;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
+.modal-actions .btn-secondary {
+  background: transparent;
+  border: 1px solid rgba(46, 80, 119, 0.3);
+  border-radius: 8px;
+  color: #2E5077;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 8px 16px;
+  transition: all 0.2s;
+}
+
+.modal-actions .btn-secondary:hover {
+  background: rgba(46, 80, 119, 0.05);
+}
+
+.modal-actions .btn-primary {
+  background: #79D7BE;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  color: #2E5077;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 8px 16px;
+  transition: all 0.2s;
+}
+
+.modal-actions .btn-primary:hover {
+  background: #4DA1A9;
+  color: #ffffff;
+}
+
+.modal-actions .btn-danger {
+  background: #e11d48;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 8px 16px;
+  transition: all 0.2s;
+}
+
+.modal-actions .btn-danger:hover {
+  background: #be123c;
+}
+
+.modal-actions button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.spinner-small {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-radius: 50%;
+  border-top-color: #ffffff;
+  animation: spin 1s ease-in-out infinite;
+  vertical-align: middle;
+}
+
+.btn-primary .spinner-small {
+  border-color: rgba(46, 80, 119, 0.3);
+  border-top-color: #2E5077;
+}
+
+.btn-primary:hover .spinner-small {
+  border-color: rgba(255, 255, 255, 0.3);
+  border-top-color: #ffffff;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

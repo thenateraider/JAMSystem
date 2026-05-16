@@ -1,0 +1,134 @@
+.applicant-table-wrap {
+  background: #F6F4F0;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  overflow-x: auto;
+}
+
+.applicant-table {
+  border-collapse: collapse;
+  min-width: 960px;
+  width: 100%;
+}
+
+.applicant-table th {
+  background: rgba(77, 161, 169, 0.1);
+  /* light #4DA1A9 */
+  border-bottom: 1px solid rgba(46, 80, 119, 0.1);
+  color: #2E5077;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 16px 24px;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.applicant-table td {
+  border-bottom: 1px solid rgba(46, 80, 119, 0.05);
+  color: #2E5077;
+  padding: 16px 24px;
+  vertical-align: middle;
+}
+
+.applicant-table tr:last-child td {
+  border-bottom: none;
+}
+
+.applicant-table tr:hover td {
+  background: rgba(185, 203, 198, 0.231);
+  /* light #79D7BE */
+}
+
+.applicant-table td strong {
+  color: #2E5077;
+  display: block;
+  font-weight: 700;
+}
+
+.applicant-id-col {
+  color: #4DA1A9;
+  font-family: monospace;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.applicant-table th.sortable {
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.applicant-table th.sortable:hover {
+  background: rgba(77, 161, 169, 0.2);
+  color: #1a3a5c;
+}
+
+.actions-col {
+  text-align: right;
+  width: 100px;
+}
+
+.actions-wrap {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-icon {
+  align-items: center;
+  background: transparent;
+  border: none;
+  border-radius: 4px;
+  color: #4DA1A9;
+  display: flex;
+  font-size: 1.1rem;
+  height: 32px;
+  justify-content: center;
+  transition: all 0.2s;
+  width: 32px;
+}
+
+.btn-icon:hover {
+  background: rgba(46, 80, 119, 0.1);
+  color: #2E5077;
+}
+
+.delete-btn:hover {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.table-state {
+  align-items: center;
+  background: #F6F4F0;
+  border: 2px dashed rgba(46, 80, 119, 0.2);
+  border-radius: 12px;
+  color: #2E5077;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  justify-content: center;
+  min-height: 240px;
+  padding: 32px;
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+  border: 3px solid rgba(46, 80, 119, 0.1);
+  border-radius: 50%;
+  border-top-color: #4DA1A9;
+  height: 32px;
+  width: 32px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 920px) {
+  .applicant-table-wrap {
+    overflow-x: auto;
+  }
+}
