@@ -1,4 +1,4 @@
-# JAMSystem — Job Application Management System
+<img width="1147" height="753" alt="Screenshot 2026-05-16 at 15 53 25" src="https://github.com/user-attachments/assets/83a44831-d902-4bbc-927e-2ef7d3956b71" /># JAMSystem — Job Application Management System
 
 A modern, responsive, and fully functional web application for tracking job applicants through the entire hiring pipeline. Built with React and backed by a free, real-time Google Sheets database via Google Apps Script.
 
@@ -9,19 +9,23 @@ A modern, responsive, and fully functional web application for tracking job appl
 ## 📸 Screenshots
 
 ### Dashboard Overview
-<!-- Add screenshot of the main dashboard here -->
+<img width="1724" height="1119" alt="Screenshot 2026-05-16 at 15 50 36" src="https://github.com/user-attachments/assets/d5e552b0-e1da-4079-8ab9-976ea39e300b" />
+
 
 ### Add New Applicant Modal
-<!-- Add screenshot of the Add Applicant form here -->
+<img width="1165" height="769" alt="Screenshot 2026-05-16 at 15 53 44" src="https://github.com/user-attachments/assets/1237ab7f-6d41-4431-a075-2482042cf02b" />
+
 
 ### Edit Applicant Modal (with Delete button)
-<!-- Add screenshot of the Edit form here -->
+
+<img width="1056" height="738" alt="Screenshot 2026-05-16 at 15 54 10" src="https://github.com/user-attachments/assets/109d387b-b57e-486c-b0f8-82fed122b9c9" />
+
 
 ### Confirmation Dialog (with loading spinner)
-<!-- Add screenshot of the Confirm dialog here -->
+<img width="489" height="251" alt="Screenshot 2026-05-16 at 15 54 38" src="https://github.com/user-attachments/assets/9a6a8758-61ca-4fbe-bc2a-3c952bfd6355" />
 
 ### Toast Notification (Success)
-<!-- Add screenshot of the success toast here -->
+<img width="1662" height="891" alt="Screenshot 2026-05-16 at 15 55 13" src="https://github.com/user-attachments/assets/658613c4-ec5d-4644-b56f-ccd40c7bc110" />
 
 ---
 
@@ -58,7 +62,7 @@ The main table displays all applicant records with the following columns:
 | **Created At** | Date and time the record was first created |
 | **Actions** | Edit (✎) and Delete (✕) buttons for each row |
 
-<!-- Add screenshot of the applicant table here -->
+<img width="1496" height="851" alt="Screenshot 2026-05-16 at 15 56 22" src="https://github.com/user-attachments/assets/ad049fb8-b055-4aaf-ac44-e8494263537a" />
 
 ---
 
@@ -74,11 +78,13 @@ This works for all columns including `ID`, `Name`, `Email`, `Phone`, `Position`,
 
 > By default, the table is sorted by **ID** in **Descending** order, so the newest applicant always appears at the top.
 
-<!-- Add screenshot showing the sort arrow indicator on a column -->
+
+<img width="800" height="415" alt="ezgif-58a6fa63f9164071" src="https://github.com/user-attachments/assets/c4235f67-05bc-46a5-81e0-dd81201a9130" />
+
 
 ---
 
-### 4. Search
+### 4.1 Search
 
 The **Search Bar** filters applicants in real-time as you type. No button press is required.
 
@@ -92,11 +98,7 @@ The search is **case-insensitive**, meaning searching `"john"` will match `"John
 
 When a search is active and no records match, the table displays an empty state message.
 
-<!-- Add screenshot of the search bar in use -->
-
----
-
-### 5. Status Filter
+### 4.2 Status Filter
 
 A **dropdown filter** next to the search bar allows you to quickly filter applicants by their current hiring status.
 
@@ -109,11 +111,11 @@ Available filter options:
 
 The filter works **in combination with the search bar**. For example, you can search for "developer" and also filter by "Interview" at the same time.
 
-<!-- Add screenshot of the status filter dropdown -->
+<img width="800" height="415" alt="searchbar" src="https://github.com/user-attachments/assets/377ab1d6-fb24-45f4-b09f-afe86c9a3bac" />
 
 ---
 
-### 6. Pagination
+### 5. Pagination
 
 The table uses **pagination** to keep the interface clean and performant when the database grows large.
 
@@ -121,11 +123,12 @@ The table uses **pagination** to keep the interface clean and performant when th
 - Shows **Previous** and **Next** buttons to navigate between pages.
 - The current page resets automatically to page 1 when you apply a new search or filter.
 
-<!-- Add screenshot of the pagination controls -->
+<img width="619" height="380" alt="Screenshot 2026-05-16 at 16 02 35" src="https://github.com/user-attachments/assets/f704cd55-de6c-4cba-842c-e60bbd6f4e0d" />
+
 
 ---
 
-### 7. Add New Applicant
+### 6. Add New Applicant
 
 Clicking the **"+ Add New Applicant"** button (top-right on desktop, full-width on mobile) opens a modal form.
 
@@ -141,11 +144,12 @@ Clicking the **"+ Add New Applicant"** button (top-right on desktop, full-width 
 | **Status** | Dropdown | Fixed to "Applied" for new entries |
 | **Note** | Textarea | Optional, for any additional remarks |
 
-<!-- Add screenshot of the Add New Applicant modal -->
+<img width="721" height="702" alt="Screenshot 2026-05-16 at 16 02 56" src="https://github.com/user-attachments/assets/7b5c571c-0aad-4de8-bce2-887dcf88f596" />
+
 
 ---
 
-### 8. Edit Applicant
+### 7. Edit Applicant
 
 Clicking the **✎ (pencil) icon** in any table row, or the edit button in the table, opens the **Edit Applicant modal** pre-filled with the existing data.
 
@@ -154,7 +158,8 @@ In addition to the normal form fields, the Edit modal includes:
 - **A "Delete" button** (red) positioned between Cancel and Save.
 - The **Status dropdown** is restricted to only show valid next steps based on the current status (see Status Flow below).
 
-<!-- Add screenshot of the Edit Applicant modal -->
+<img width="659" height="691" alt="Screenshot 2026-05-16 at 16 03 14" src="https://github.com/user-attachments/assets/9b8e9081-2d07-4d71-bde1-33bfe24fac64" />
+
 
 ---
 
@@ -178,8 +183,8 @@ All form inputs are validated in real-time as you type. Errors appear instantly 
 
 #### ✅ Shake Animation
 If you try to submit the form with a validation error, the offending field **shakes** to draw your attention to it visually.
+<img width="800" height="454" alt="shakeerror" src="https://github.com/user-attachments/assets/6c6a51bc-dd3c-4fcd-a543-f2bde2aa7967" />
 
-<!-- Add screenshot showing a validation error message -->
 
 ---
 
@@ -198,7 +203,8 @@ This prevents accidental or incorrect status changes (e.g., moving someone direc
 
 > When a status is locked (Passed or Rejected), the dropdown is automatically disabled.
 
-<!-- Add screenshot showing the restricted status dropdown -->
+<img width="816" height="750" alt="Screenshot 2026-05-16 at 16 05 31" src="https://github.com/user-attachments/assets/9e9bc246-3b59-4afd-b6bf-c2419b6e4caf" />
+
 
 ---
 
@@ -218,7 +224,8 @@ Once you click **"Confirm"** in any dialog, the button instantly transforms into
 - The cancel button is also **disabled** (cannot interrupt the operation mid-way).
 - This prevents double-submissions and data corruption during the network request.
 
-<!-- Add screenshot of the Confirm dialog with the loading spinner -->
+<img width="530" height="295" alt="Screenshot 2026-05-16 at 16 06 04" src="https://github.com/user-attachments/assets/cf95148d-1207-4442-a79f-77e15aa6122d" />
+
 
 ---
 
@@ -236,8 +243,8 @@ After every completed action, a **Toast notification** slides in from the bottom
 - The toast **automatically disappears** after 5 seconds.
 - You can also **manually close** it by clicking the `✕` button on the toast.
 
-<!-- Add screenshot of the success toast notification -->
-<!-- Add screenshot of the error toast notification -->
+<img width="562" height="111" alt="Screenshot 2026-05-16 at 14 55 18" src="https://github.com/user-attachments/assets/26208454-60b6-4e57-911c-c66b92c7228c" />
+
 
 ---
 
