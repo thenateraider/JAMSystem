@@ -376,8 +376,4 @@ JAMSystem uses Google Sheets as its database. Follow these steps to connect your
 4. Set source to **Deploy from a branch**, select the **`gh-pages`** branch, and click **Save**.
 5. Your site will be live at `https://[your-username].github.io/JAMSystem/`
 
----
 
-## 📄 License
-
-This project is open-source and available under the [MIT License](LICENSE).
