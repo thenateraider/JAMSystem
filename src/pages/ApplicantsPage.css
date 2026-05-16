@@ -108,7 +108,13 @@
   flex-shrink: 0;
   height: 64px;
   justify-content: center;
+  margin-left: auto;
   width: 64px;
+}
+
+.stat-icon svg {
+  height: 28px;
+  width: 28px;
 }
 
 .stat-icon--total {
@@ -166,6 +172,17 @@
   .stat-card {
     min-width: 0;
     overflow: hidden;
+  }
+
+  /* Smaller icon on mobile, still right-aligned */
+  .stat-icon {
+    height: 48px;
+    width: 48px;
+  }
+
+  .stat-icon svg {
+    height: 22px;
+    width: 22px;
   }
 
   .page-header {
