@@ -1,4 +1,6 @@
-<img width="1147" height="753" alt="Screenshot 2026-05-16 at 15 53 25" src="https://github.com/user-attachments/assets/83a44831-d902-4bbc-927e-2ef7d3956b71" /># JAMSystem — Job Application Management System
+<img width="1095" height="155" alt="Screenshot 2026-05-16 at 16 07 02" src="https://github.com/user-attachments/assets/697c7c63-4cc9-4c70-aa9f-7624c58097a7" />
+
+# JAMSystem — Job Application Management System
 
 A modern, responsive, and fully functional web application for tracking job applicants through the entire hiring pipeline. Built with React and backed by a free, real-time Google Sheets database via Google Apps Script.
 
