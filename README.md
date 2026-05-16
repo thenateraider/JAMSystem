@@ -354,6 +354,7 @@ JAMSystem uses Google Sheets as its database. Follow these steps to connect your
    ```javascript
    export const API_URL = 'YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE'
    ```
+<img width="1724" height="907" alt="Screenshot 2026-05-16 at 16 18 23" src="https://github.com/user-attachments/assets/14245e73-ad6f-4d03-b581-9728287a6ffb" />
 
 ---
 
