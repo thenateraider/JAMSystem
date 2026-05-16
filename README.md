@@ -245,7 +245,7 @@ After every completed action, a **Toast notification** slides in from the bottom
 - The toast **automatically disappears** after 5 seconds.
 - You can also **manually close** it by clicking the `✕` button on the toast.
 
-<img width="562" height="111" alt="Screenshot 2026-05-16 at 14 55 18" src="https://github.com/user-attachments/assets/26208454-60b6-4e57-911c-c66b92c7228c" />
+<img width="1662" height="891" alt="Screenshot 2026-05-16 at 15 55 13" src="https://github.com/user-attachments/assets/658613c4-ec5d-4644-b56f-ccd40c7bc110" />
 
 
 ---
